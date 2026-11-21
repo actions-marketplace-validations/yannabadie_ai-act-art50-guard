@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yannabadie.github.io/ai-act-art50-guard/sitemap.xml

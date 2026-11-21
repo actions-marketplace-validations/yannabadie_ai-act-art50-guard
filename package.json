@@ -1,0 +1,36 @@
+{
+  "name": "ai-act-art50-guard",
+  "version": "1.0.0",
+  "description": "Zero-dependency EU AI Act (Regulation (EU) 2024/1689 + Digital Omnibus (EU) 2026/1744) Art. 50 scanner & AI Register generator.",
+  "type": "module",
+  "main": "src/scan.mjs",
+  "bin": {
+    "ai-act-guard": "./src/scan.mjs"
+  },
+  "scripts": {
+    "test": "node --test tests/scan.test.mjs",
+    "scan": "node src/scan.mjs"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "eu-ai-act",
+    "ai-act",
+    "article-50",
+    "digital-omnibus",
+    "ai-governance",
+    "ai-register",
+    "compliance",
+    "github-action",
+    "regtech"
+  ],
+  "author": "Yann Abadie",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yannabadie/ai-act-art50-guard.git"
+  },
+  "homepage": "https://yannabadie.github.io/ai-act-art50-guard/",
+  "dependencies": {}
+}

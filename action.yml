@@ -1,0 +1,49 @@
+name: "AIActKit — EU AI Act Art. 50 Transparency Guard"
+author: "Yann Abadie"
+description: "Detect 30+ AI SDKs & chat widgets, check EU AI Act Art. 50 notices & export AI Register JSON/CSV — zero deps."
+
+branding:
+  icon: "check-circle"
+  color: "purple"
+
+inputs:
+  target:
+    description: "Directory or file to scan for AI SDKs, LLM APIs, chat widgets & Art. 50 disclosures (default: '.')."
+    required: false
+    default: "."
+  json-output:
+    description: "Output path for generated AI Register JSON."
+    required: false
+    default: "ai-register.json"
+  csv-output:
+    description: "Output path for generated AI Register CSV (Excel UTF-8-SIG)."
+    required: false
+    default: "ai-register.csv"
+  fail-on-missing-disclosure:
+    description: "Fail workflow (exit 1) if Art. 50 AI systems are detected without transparency disclosure markers (true/false)."
+    required: false
+    default: "false"
+  max-depth:
+    description: "Maximum directory traversal depth."
+    required: false
+    default: "4"
+
+outputs:
+  json-path:
+    description: "Resolved path to the generated AI Register JSON."
+  csv-path:
+    description: "Resolved path to the generated AI Register CSV."
+  ai-systems-count:
+    description: "Total distinct AI SDKs, APIs, or chat/gen-AI widgets detected."
+  art50-required:
+    description: "Whether EU AI Act Article 50 transparency obligations apply (true/false)."
+  art50-disclosure-found:
+    description: "Whether an Art. 50 transparency disclosure marker or AI_DISCLOSURE.md was found (true/false)."
+  risk-tier:
+    description: "Highest detected EU AI Act tier (ART50_TRANSPARENCY_LIVE / ART4_AI_LITERACY_MEANS / MINIMAL_RISK)."
+  readiness-score:
+    description: "Deterministic EU AI Act Art. 50 readiness score (0-100)."
+
+runs:
+  using: "node20"
+  main: "src/scan.mjs"

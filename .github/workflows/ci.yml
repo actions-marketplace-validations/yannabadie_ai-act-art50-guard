@@ -1,0 +1,46 @@
+name: CI — Tests & Self-Scan (AIActKit Art. 50 Guard)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-dogfood:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run unit tests
+        run: node --test tests/scan.test.mjs
+
+      - name: Dogfood AIActKit Action on this repository
+        id: aiact
+        uses: ./
+        with:
+          target: "."
+          json-output: "ai-register.json"
+          csv-output: "ai-register.csv"
+          fail-on-missing-disclosure: "true"
+
+      - name: Verify generated AI Register JSON & CSV
+        run: |
+          node -e '
+            const fs = require("node:fs");
+            const r = JSON.parse(fs.readFileSync("ai-register.json", "utf8"));
+            const csv = fs.readFileSync("ai-register.csv", "utf8");
+            if (!r.regulation.digitalOmnibus.includes("2026/1744")) process.exit(1);
+            if (!csv.includes("system_id,system_name")) process.exit(1);
+            console.log("Verified AI Register:", r.summary);
+          '
+          echo "Outputs: score=${{ steps.aiact.outputs.readiness-score }}, disclosure=${{ steps.aiact.outputs.art50-disclosure-found }}"
