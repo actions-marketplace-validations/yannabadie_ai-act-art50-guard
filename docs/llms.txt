@@ -1,0 +1,17 @@
+# AIActKit 2026 — EU AI Act Art. 50 Transparency Guard
+
+> Zero-dependency GitHub Action, Node.js 20/22+ CLI, and 100 % client-side EU AI Act Risk Classifier, Article 50 Banner Generator, and CSV/JSON AI Register — aligned with Regulation (EU) 2024/1689 (Art. 50 in force since 2 August 2026) and Digital Omnibus Regulation (EU) 2026/1744.
+
+## Free Tools & GitHub Marketplace
+
+- [Browser-Side EU AI Act Risk Classifier, Art. 50 Banner Builder & AI Register](https://yannabadie.github.io/ai-act-art50-guard/): Interactive FR/EN compliance tool with zero data upload.
+- [GitHub Marketplace Action (`yannabadie/ai-act-art50-guard@v1.0.0`)](https://github.com/marketplace/actions/aiactkit-eu-ai-act-art-50-transparency-guard): Detects 36 AI/LLM SDKs, synthetic media tools, chat widgets, and Art. 50 disclosure markers in repositories.
+- [XML Sitemap](https://yannabadie.github.io/ai-act-art50-guard/sitemap.xml)
+
+## Companion EU Compliance Toolkits & Packs
+
+- [EU AI Act Art. 50, CRA & EAA / RGAA v5 — Practical Compliance Guide (PDF 43 p., 24 EUR)](https://yannabadi.gumroad.com/l/eu-compliance-2026-2027-guide)
+- [EU Digital Compliance Command Center 2026–2027 (Notion System, 29 EUR)](https://yannabadi.gumroad.com/l/eu-compliance-2026-2027-notion-pack)
+- [CRA-SBOM-Guard (EU CRA Art. 14)](https://yannabadie.github.io/cra-sbom-guard/)
+- [AccessiKit (EU EAA / RGAA v5)](https://yannabadie.github.io/accessikit-eaa-rgaa/)
+- [FacturKit 2027 (French Factur-X 1.09.2 / EN 16931)](https://yannabadie.github.io/facturkit-2027/)
